@@ -1,5 +1,4 @@
 {
   "version": 2,
-  "builds": [{ "src": "api/swiggy.js", "use": "@vercel/node" }],
   "routes": [{ "src": "/api/swiggy", "dest": "/api/swiggy.js" }]
 }
