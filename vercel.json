@@ -1,4 +1,4 @@
 {
   "version": 2,
-  "routes": [{ "src": "/api/swiggy", "dest": "/api/swiggy.js" }]
+  "routes": [{ "src": "/api/swiggy", "dest": "/api/index.js" }]
 }
