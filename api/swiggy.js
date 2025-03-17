@@ -1,6 +1,10 @@
 import axios from "axios";
 
 export default async function handler(req, res) {
+    if (req.method !== "GET") {
+        return res.status(405).json({ error: "Method Not Allowed" });
+    }
+
     const { lat, lng } = req.query;
 
     if (!lat || !lng) {
@@ -11,9 +15,8 @@ export default async function handler(req, res) {
 
     try {
         const response = await axios.get(swiggyApiUrl, {
-            headers: { "User-Agent": "Mozilla/5.0" }, // Helps bypass API restrictions
+            headers: { "User-Agent": "Mozilla/5.0" },
         });
-
         res.status(200).json(response.data);
     } catch (error) {
         console.error("Error fetching Swiggy data:", error);
